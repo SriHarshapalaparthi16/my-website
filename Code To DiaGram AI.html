@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Stylish font added -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Code-to-Diagram AI </title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Updated font */
+      
+      background: #e0f7f1; /* light teal background */
+      color: #004d40; /* dark teal text */
+    }
+    nav {
+      background: linear-gradient(135deg, #e8eeed, #004d40); /* dark teal gradient */
+      padding: 25px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #a7ffeb; /* light mint */
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    /* Change only the first nav link color (the logo/title) to black */
+    nav > div:first-child a {
+      color: black !important;
+    }
+    header {
+      background: linear-gradient(135deg, #004d40, #00796b); /* inverse gradient */
+      color: #e0f2f1; /* very light teal */
+      padding: 100px 10%;
+      text-align: left;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    section {
+      padding: 60px 10%;
+      text-align: left;
+      color: #004d40;
+    }
+    section h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    footer {
+      background: linear-gradient(135deg, #00796b, #004d40);
+      color: #a7ffeb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-weight: 600;
+    }
+    
+    
+
+
+    /* Navbar Styling */
+    nav {
+      background: linear-gradient(135deg, #e8eeed, #004d40); /* dark teal gradient */
+      padding: 25px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateZ(0);
+      animation: navAnimation 1s ease-in-out 0.5s forwards;
+    }
+    nav a {
+      color: #a7ffeb; /* light mint */
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    nav > div:first-child a {
+      color: black !important;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      color: #e0f2f1; /* very light teal */
+      background: linear-gradient(135deg, #004d40, #00796b); /* inverse gradient */
+      padding: 100px 10%;
+      transform: translateZ(-100px);
+      animation: fadeInUp 2s ease-out 1s forwards, rotateIn 1s ease-out forwards;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      animation: slideIn 1s ease-out forwards;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateZ(-50px);
+      animation: fadeInUp 2s ease-out 1.5s forwards;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 10%;
+      text-align: left;
+      color: #004d40;
+      opacity: 0;
+      transform: translateZ(-100px);
+      animation: fadeInUp 2s ease-out 2s forwards, rotateIn 1s ease-out 1s forwards;
+    }
+    section h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease-out 2s forwards;
+    }
+    section ol {
+      margin-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 2s ease-out 2.5s forwards;
+    }
+
+    /* Footer Styling */
+    footer {
+      background: linear-gradient(135deg, #00796b, #004d40);
+      color: #a7ffeb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateZ(-50px);
+      animation: fadeInUp 2s ease-out 3s forwards, rotateIn 1s ease-out 2s forwards;
+    }
+    .image-logo{
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+    .flexd{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rotateIn {
+      0% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%) rotateY(180deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) rotateY(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes navAnimation {
+      0% {
+        transform: translateZ(-200px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateZ(0);
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+</html>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="flexd">
+      <image src="C:\Users\user\OneDrive\Pictures\WhatsApp Image 2025-08-22 at 5.48.51 PM.jpg" class="image-logo">
+      <a href="index.html"><strong>Code-to-Diagram AI</strong></a></div>
+    <div>
+      <a href="hmpage9.html">Home</a>
+      <a href="css10.html">How It Works</a>
+      <a href="css11.html">Features</a>
+      <a href="https://mermaid.live/edit#pako:eNpVUVtvgyAU_ivkPLUZNmJ1Io3dw7qHJVuzpNvDpj7QSluTCoZidjH-9yF2W0bCOZzvwkdCBztVCmCwP6n33ZFrg55XuUR2bYydJplrxRR53hLdy8pkG2GQxIinPkbblBSjeqCc5kGpppNoifybfqQGxFLoVZyd4klX0qwz1xC_-EfQ8S9NyY1wOUbUTcqvtgsbZ8s2HYAFkp53sY3a3-D_gWvliDtZTjJbiilgOOiqBGZ0KzDUQtd8GKEbjDmYo6hFDsweS7Hn7cnkkMve2hou35Sqf5xatYcjsD0_ne3UukesKn7Q_E8iZCn0rWqlAUaCxN0BrIMPYEFEZlHkJ4TaHdA4jjF8AouiWULDeRTEYZLEUXgd9hi-XCyZ-cTilJBkTikNCcUgysoo_Tj-n_vG_hsrc4oe">Examples</a>
+      <a href="contact3.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Transform Your Code Into Visual Diagrams</h1>
+    <p>Leverage AI and Mermaid.js to instantly visualize your programming logic.</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <section>
+    <h1>How It Works ???</h1>
+    <ol>
+      <li>Input your source code</li>
+      <li>AI interprets the logic structure</li>
+      <li>Generate clear diagrams with Mermaid syntax</li>
+    </ol>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 Code-to-Diagram AI. All rights reserved.</p>
+  </footer>
+</body>
+</html>

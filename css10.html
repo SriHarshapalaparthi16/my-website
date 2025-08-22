@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Code-to-Diagram AI Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 80px 60px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    h2 {
+      color: #00796b;
+      margin: 60px 0 30px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: step;
+    }
+
+    li {
+      counter-increment: step;
+      margin-bottom: 40px;
+      position: relative;
+      padding-left: 50px;
+      opacity: 0;
+      transform: translateX(60px);
+      animation: slideIn 1s ease forwards;
+    }
+
+    li:nth-child(1) { animation-delay: 0.2s; }
+    li:nth-child(2) { animation-delay: 0.4s; }
+    li:nth-child(3) { animation-delay: 0.6s; }
+    li:nth-child(4) { animation-delay: 0.8s; }
+    li:nth-child(5) { animation-delay: 1s; }
+
+    li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #00796b;
+      color: white;
+      font-weight: 600;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.1rem;
+    }
+
+    strong {
+      color: #00796b;
+    }
+
+    hr {
+      margin: 60px 0;
+      border: none;
+      border-top: 2px solid #e0e0e0;
+    }
+
+    p.short-summary {
+      font-weight: 600;
+      font-size: 1.2rem;
+      background: #e0f7fa;
+      padding: 25px 30px;
+      border-left: 6px solid #00796b;
+      border-radius: 8px;
+      text-align: center;
+      animation: bounceIn 1.5s ease-out;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #004d40;
+      color: white;
+      font-size: 1rem;
+      margin-top: 60px;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 30px 20px;
+      }
+
+      li {
+        padding-left: 40px;
+      }
+
+      p.short-summary {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>How Code-to-Diagram AI Works</h1>
+  </header>
+
+  <section>
+    <ol>
+      <li>
+        <strong>User Inputs Code</strong><br />
+        The user opens the website and pastes a piece of code into the input area. This code can be in a supported programming language such as Python, JavaScript, etc.
+      </li>
+      <li>
+        <strong>AI Analyzes the Code</strong><br />
+        Once the code is submitted, the system sends it to <strong>GPT-4</strong>, an advanced AI model. GPT-4 reads the code and understands the structure, including loops, conditions, functions, and the overall flow of logic.
+      </li>
+      <li>
+        <strong>Flowchart Logic is Generated</strong><br />
+        Based on its analysis, the AI converts the logic of the code into <strong>Mermaid.js</strong> syntax. Mermaid.js is a text-based diagramming tool that can create flowcharts using simple code.
+      </li>
+      <li>
+        <strong>Mermaid Diagram is Created</strong><br />
+        The Mermaid code is either shown on the platform or can be copied into a <strong>Mermaid live editor</strong>, where it gets rendered as a flowchart.
+      </li>
+      <li>
+        <strong>User Reviews or Exports Diagram</strong><br />
+        The user can now review the diagram, make changes, or export it for documentation, presentation, or educational use.
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>Process Recap</h2>
+    <p class="short-summary">Paste code → AI analyzes it → Mermaid flowchart is generated → View or export the diagram.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Code-to-Diagram AI — All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

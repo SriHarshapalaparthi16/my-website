@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features - Code-to-Diagram AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7f1, #d0f0eb);
+      color: #004d40;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #00796b, #004d40);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeInTop 1.2s ease-in-out;
+    }
+
+    header h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header ul {
+      font-size: 1.2rem;
+      list-style-type: none;
+      margin-top: 10px;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 60px auto;
+      padding: 50px 40px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      color: #00796b;
+      border-bottom: 3px solid #004d40;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+      position: relative;
+      animation: slideInLeft 1s ease-out;
+    }
+
+    ol {
+      padding-left: 20px;
+      counter-reset: feature-count;
+    }
+
+    ol > li {
+      margin-bottom: 35px;
+      position: relative;
+      padding-left: 50px;
+      opacity: 0;
+      transform: translateX(60px);
+      animation: slideFade 0.8s ease forwards;
+    }
+
+    ol > li:nth-child(1) { animation-delay: 0.2s; }
+    ol > li:nth-child(2) { animation-delay: 0.4s; }
+    ol > li:nth-child(3) { animation-delay: 0.6s; }
+    ol > li:nth-child(4) { animation-delay: 0.8s; }
+    ol > li:nth-child(5) { animation-delay: 1s; }
+
+    ol > li::before {
+      counter-increment: feature-count;
+      content: counter(feature-count);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      background-color: #00796b;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 121, 107, 0.4);
+    }
+
+    .description {
+      font-weight: normal;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    .nested-list {
+      margin-left: 20px;
+      margin-top: 10px;
+      font-weight: normal;
+      list-style-type: circle;
+    }
+
+    .nested-list li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #004d40;
+      color: #fff;
+      margin-top: 60px;
+      font-size: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-80px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideFade {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h2 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 30px 20px;
+        margin: 40px 15px;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      ol > li {
+        padding-left: 40px;
+      }
+
+      ol > li::before {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Features</h2>
+    <ul>
+      <li>Explore the powerful capabilities of Code-to-Diagram AI</li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>Types of Features</h2>
+    <ol>
+      <li>
+        AI-Powered Code Analysis
+        <p class="description">
+          Code-to-Diagram AI uses GPT-4 to intelligently analyze the structure and logic of your source code. It understands programming constructs like loops, conditions, function calls, and control flow.
+        </p>
+      </li>
+
+      <li>
+        Automatic Flowchart Generation
+        <p class="description">
+          The tool automatically generates a flowchart in <em>Mermaid.js</em> syntax based on the input code. This removes the need to manually draw diagrams or map logic by hand.
+        </p>
+      </li>
+
+      <li>
+        Mermaid.js Integration
+        <p class="description">
+          The platform outputs diagrams using <em>Mermaid.js</em>, a popular text-based diagramming tool. These diagrams can be easily edited, shared, or exported using any Mermaid-compatible editor.
+        </p>
+      </li>
+
+      <li>
+        Simple Web Interface
+        <p class="description">
+          The web interface is clean, responsive, and user-friendly. Users can navigate easily, paste their code, and instantly see the result without needing to install anything.
+        </p>
+      </li>
+
+      <li>
+        Supports Multiple Code Structures
+        <p class="description">
+          The AI can handle various code logic patterns including:
+        </p>
+        <ul class="nested-list">
+          <li>If-else conditions</li>
+          <li>Loops (for, while)</li>
+          <li>Functions</li>
+          <li>Nested structures</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>© 2025 Code-to-Diagram AI — All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

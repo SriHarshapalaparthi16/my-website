@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Code-to-Diagram AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f2f1, #b2dfdb);
+      color: #004d40;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #00796b;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: white;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease-in-out;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00796b;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeUp 1.2s ease-out;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #004d40;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00796b;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background-color: #00796b;
+      color: white;
+      font-size: 1.1rem;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .thank-you h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #00796b;
+    }
+
+    .thank-you p {
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d40;
+      color: white;
+      margin-top: 60px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+        margin: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <!-- Contact Form -->
+  <section class="container" id="form-section">
+    <h2>We’d love to hear from you!</h2>
+    <form id="contactForm">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Thank You Message -->
+  <section class="container thank-you" id="thankYouSection">
+    <h2>Thank You!</h2>
+    <p>Your message has been received. We will get back to you shortly.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Code-to-Diagram AI — All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const formSection = document.getElementById('form-section');
+    const thankYouSection = document.getElementById('thankYouSection');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Add simple fade transition
+      formSection.style.animation = 'fadeOut 0.5s ease forwards';
+      setTimeout(() => {
+        formSection.style.display = 'none';
+        thankYouSection.style.display = 'block';
+        thankYouSection.style.animation = 'fadeIn 0.8s ease-in-out forwards';
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
